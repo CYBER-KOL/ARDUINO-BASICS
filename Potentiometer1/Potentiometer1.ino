@@ -12,6 +12,7 @@ void loop() {
   // put your main code here, to run repeatedly:
   readVal=analogRead(VoltP);
   V2=(5./1023.)*readVal;
+  Serial.print(" Potentiometer Voltage is = ");
   Serial.println((5./1023.)*readVal);
   delay(dt);
 }
