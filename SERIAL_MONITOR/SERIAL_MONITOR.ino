@@ -1,34 +1,24 @@
-
-int blue=9;
-int dt=500;
-int j;
-int nBlinks;
-int H=HIGH;
-int L=LOW;
-String msg1="How many Blinks do you want:";
-
+float radius;
+String msg1="Enter your Radius:";
+float pi=3.14;
+float area;
+String msg2="The area of the Circle is:";
 
 void setup(){
 Serial.begin(9600);
-pinMode(blue, OUTPUT);
 
 }
 
 void loop(){
-  Serial.println(msg1);
+Serial.print(msg1);
 while (Serial.available()==0){
-}
-
-nBlinks=Serial.parseInt();
-
-for (j=1; j<=nBlinks; j=j+1){
-  digitalWrite(blue, H);
-  delay(dt);
-  digitalWrite(blue, L);
-  delay(dt);
 
 }
+radius=Serial.parseFloat();
+area= pi*radius*radius;
+Serial.println(radius);
+Serial.print(msg2);
+Serial.println(area);
 Serial.println();
+
 }
-
-
